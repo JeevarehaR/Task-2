@@ -1,0 +1,30 @@
+Difference between Window and Document:
+
+The window command are the Web APIs that the browser has. 
+The document, on the other hand, is used for DOM manipulation to modify the HTML.
+
+1.Window:
+	window is the execution context and global object for that context's JavaScript.
+	Each browser tab has its own top-level window object. 
+	Each <iframe> (and deprecated <frame>) element has its own window object too, nested within a parent window. 
+	Each of these windows gets its own separate global object. 
+	window.window always refers to window, but window.parent and window.top might refer to enclosing windows, giving access to other execution contexts. 
+	In addition, window properties include:
+		*setTimeout() and setInterval() binding event handlers to a timer
+		*location giving the current URL
+		*history with methods back() and forward() giving the tab's mutable history
+		*navigator describing the browser software
+2.Document:
+	A document contains the DOM, initialized by parsing HTML
+	Each window object has a document object to be rendered. 
+	These objects get confused in part because HTML elements are added to the global object when assigned a unique id. 
+	E.g.,
+	<body>
+  		<p id="Jeeva"> This is the first paragraph.</p>
+	</body>
+	In the HTML snippet,the paragraph element can be referenced by any of the following:
+		*window.Jeeva or window["Jeeva"]
+		*document.getElementById("Jeeva")
+		*document.querySelector("#Jeeva")
+		*document.body.firstChild
+		*document.body.children[0]
